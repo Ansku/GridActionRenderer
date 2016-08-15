@@ -1,0 +1,6 @@
+.project
+.settings/
+.classpath
+target/
+**/styles.scss.cache
+gridactionrenderer-demo/src/main/webapp/VAADIN/widgetsets/
