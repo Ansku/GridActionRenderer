@@ -1,3 +1,8 @@
+.grid-action-panel {
+  position: relative;
+  top: -2px;
+}
+
 .grid-action-widget {
   float: left;
   width: 25px;
