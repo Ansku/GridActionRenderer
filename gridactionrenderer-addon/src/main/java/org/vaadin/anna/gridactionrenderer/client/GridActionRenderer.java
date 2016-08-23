@@ -16,6 +16,7 @@
 package org.vaadin.anna.gridactionrenderer.client;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -86,6 +87,7 @@ public class GridActionRenderer extends WidgetRenderer<String, GridActionPanel> 
 
         private int columnIndex;
         private int rowIndex;
+        private List<Widget> widgets = new LinkedList<>();
 
         public GridActionPanel() {
             super();
@@ -95,7 +97,7 @@ public class GridActionRenderer extends WidgetRenderer<String, GridActionPanel> 
             for (final GridAction gridAction : gridActions) {
 
                 GridActionWidget actionWidget = new GridActionWidget(gridAction);
-                add(actionWidget);
+                widgets.add(actionWidget);
 
                 // special tooltip handling, won't work if the used Grid
                 // implementation doesn't support custom tooltips
@@ -120,6 +122,7 @@ public class GridActionRenderer extends WidgetRenderer<String, GridActionPanel> 
         }
 
         public void setActionVisibility(String data) {
+            clear();
             List<Integer> visibleActionIndexes = new ArrayList<Integer>();
             if (data != null && data.length() > 0) {
                 String[] parts = data.split(",");
@@ -134,12 +137,14 @@ public class GridActionRenderer extends WidgetRenderer<String, GridActionPanel> 
                 }
             }
             int actionCount = 0;
-            for (Widget child : getChildren()) {
+            for (Widget child : widgets) { //getChildren()) {
                 if (child instanceof GridActionWidget) {
                     // update the visibility of all GridActionWidgets
                     boolean visible = visibleActionIndexes.contains(-1)
                             || visibleActionIndexes.contains(actionCount);
-                    child.setVisible(visible);
+                    if(visible) {
+                        add(child);
+                    }
                     ++actionCount;
                 }
             }
