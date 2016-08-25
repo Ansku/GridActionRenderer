@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.event.Action;
-import com.vaadin.server.FontAwesome;
+import com.vaadin.server.FontIcon;
 import com.vaadin.server.ThemeResource;
 
 /**
@@ -55,11 +55,11 @@ public class GridAction extends Action {
      * Constructor.
      *
      * @param icon
-     *            FontAwesome icon, required
+     *            FontIcon icon, required
      * @param description
      *            tooltip text, can be null
      */
-    public GridAction(FontAwesome icon, String description) {
+    public GridAction(FontIcon icon, String description) {
         super(null);
         assert icon != null;
 
@@ -80,12 +80,12 @@ public class GridAction extends Action {
 
     /**
      * Constructor. If you want to give the action a tooltip, use
-     * {@link #GridAction(FontAwesome, String)} instead.
+     * {@link #GridAction(FontIcon, String)} instead.
      *
      * @param icon
-     *            FontAwesome icon, required
+     *            FontIcon icon, required
      */
-    public GridAction(FontAwesome icon) {
+    public GridAction(FontIcon icon) {
         this(icon, null);
     }
 
