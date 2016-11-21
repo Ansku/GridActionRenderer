@@ -34,44 +34,42 @@ import com.vaadin.ui.Grid;
  * Grid connector class instead and simply copy over the contents of the
  * ActionGridConnector.
  */
-public abstract class ActionGrid extends Grid implements
-        GridActionClickListener {
+public abstract class ActionGrid extends Grid implements GridActionClickListener {
 
-    private GridActionRenderer actionRenderer;
+	private GridActionRenderer actionRenderer;
 
-    /**
-     * Constructor.
-     *
-     * @param actions
-     *            all the actions that can be displayed by the default action
-     *            renderer
-     */
-    public ActionGrid(List<GridAction> actions) {
-        super();
-        actionRenderer = createGridActionRenderer(actions);
-    }
+	/**
+	 * Constructor.
+	 *
+	 * @param actions
+	 *            all the actions that can be displayed by the default action
+	 *            renderer
+	 */
+	public ActionGrid(List<GridAction> actions) {
+		super();
+		this.actionRenderer = createGridActionRenderer(actions);
+	}
 
-    /**
-     * Returns the default action renderer.
-     *
-     * @return action renderer
-     */
-    public GridActionRenderer getGridActionRenderer() {
-        return actionRenderer;
-    }
+	/**
+	 * Returns the default action renderer.
+	 *
+	 * @return action renderer
+	 */
+	public GridActionRenderer getGridActionRenderer() {
+		return this.actionRenderer;
+	}
 
-    /**
-     * Creates the default action renderer.
-     *
-     * @param actions
-     *            all the actions that can be displayed by the default action
-     *            renderer
-     * @return action renderer
-     */
-    protected GridActionRenderer createGridActionRenderer(
-            List<GridAction> actions) {
-        GridActionRenderer actionRenderer = new GridActionRenderer(actions);
-        actionRenderer.addActionClickListener(this);
-        return actionRenderer;
-    }
+	/**
+	 * Creates the default action renderer.
+	 *
+	 * @param actions
+	 *            all the actions that can be displayed by the default action
+	 *            renderer
+	 * @return action renderer
+	 */
+	protected GridActionRenderer createGridActionRenderer(List<GridAction> actions) {
+		GridActionRenderer actionRenderer = new GridActionRenderer(actions);
+		actionRenderer.addActionClickListener(this);
+		return actionRenderer;
+	}
 }

@@ -5,7 +5,7 @@
 	<groupId>org.vaadin.anna</groupId>
 	<artifactId>gridactionrenderer</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-b</version>
+	<version>1.1-bp</version>
 	<name>GridActionRenderer Add-on</name>
 
 	<properties>
