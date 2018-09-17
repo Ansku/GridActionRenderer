@@ -1,3 +1,6 @@
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/gridactionrenderer-add-on)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/gridactionrenderer-add-on.svg)](https://vaadin.com/directory/component/gridactionrenderer-add-on)
+
 # GridActionRenderer Add-on for Vaadin 7
 
 GridActionRenderer is an add-on for Vaadin 7. It's a renderer for adding an action column to Grid with separate tooltips for each action.
