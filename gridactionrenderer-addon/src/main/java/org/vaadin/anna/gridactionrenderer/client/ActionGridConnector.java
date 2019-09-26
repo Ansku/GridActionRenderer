@@ -19,6 +19,7 @@ import com.google.gwt.dom.client.Element;
 import com.vaadin.client.TooltipInfo;
 import com.vaadin.client.connectors.GridConnector;
 import com.vaadin.shared.ui.Connect;
+import com.vaadin.ui.Grid;
 
 /**
  * There is no built-in tooltip support for custom rendered cells where only a
@@ -27,21 +28,19 @@ import com.vaadin.shared.ui.Connect;
  * overrides the default behaviour to makes that special tooltip handling
  * possible.
  */
-@Connect(org.vaadin.anna.gridactionrenderer.ActionGrid.class)
+@Connect(Grid.class)
 public class ActionGridConnector extends GridConnector {
 
-    @Override
-    public TooltipInfo getTooltipInfo(Element element) {
-        if (element.hasAttribute(GridActionRendererConnector.TOOLTIP)) {
-            return new TooltipInfo(
-                    element.getAttribute(GridActionRendererConnector.TOOLTIP),
-                    null);
-        }
-        return super.getTooltipInfo(element);
-    }
+	@Override
+	public TooltipInfo getTooltipInfo(Element element) {
+		if (element.hasAttribute(GridActionRendererConnector.TOOLTIP)) {
+			return new TooltipInfo(element.getAttribute(GridActionRendererConnector.TOOLTIP), null);
+		}
+		return super.getTooltipInfo(element);
+	}
 
-    @Override
-    public boolean hasTooltip() {
-        return true;
-    }
+	@Override
+	public boolean hasTooltip() {
+		return true;
+	}
 }

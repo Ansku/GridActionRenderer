@@ -4,3 +4,5 @@
 target/
 **/styles.scss.cache
 gridactionrenderer-demo/src/main/webapp/VAADIN/widgetsets/
+
+rebel.xml
